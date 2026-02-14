@@ -66,6 +66,6 @@ Projet pédagogique en cours de développement. Les données utilisées sont fic
 
 ---
 
-**Auteur** : [Votre Nom]  
+**Auteur** : [BXS7]  
 **Date de création** : 07/02/2025  
 **License** : MIT
