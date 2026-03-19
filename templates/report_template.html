@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rapport RH — Turnover {{ year }}</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #F3F4F6;
+      color: #1F2937;
+      font-size: 15px;
+    }
+
+    /* ---- En-tête ---- */
+    header {
+      background: linear-gradient(135deg, #1E40AF 0%, #2563EB 100%);
+      color: #fff;
+      padding: 2.5rem 3rem;
+    }
+    header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: .4rem; }
+    header .subtitle { opacity: .85; font-size: 1rem; }
+    header .meta { margin-top: 1rem; font-size: .85rem; opacity: .7; }
+
+    /* ---- Layout principal ---- */
+    main { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem 3rem; }
+
+    /* ---- Section ---- */
+    section { margin-bottom: 2.5rem; }
+    section h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1E40AF;
+      border-left: 4px solid #2563EB;
+      padding-left: .75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ---- KPI Cards ---- */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+    }
+    .kpi-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,.07);
+      text-align: center;
+    }
+    .kpi-card .value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .kpi-card .label {
+      color: #6B7280;
+      font-size: .85rem;
+      margin-top: .4rem;
+    }
+    .kpi-card.danger .value  { color: #DC2626; }
+    .kpi-card.warning .value { color: #D97706; }
+    .kpi-card.ok .value      { color: #16A34A; }
+    .kpi-card.blue .value    { color: #2563EB; }
+
+    /* ---- Graphiques ---- */
+    .chart-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,.07);
+      text-align: center;
+    }
+    .chart-box img { max-width: 100%; height: auto; }
+
+    .charts-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .charts-2col { grid-template-columns: 1fr; }
+    }
+
+    /* ---- Tableaux ---- */
+    .table-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 6px rgba(0,0,0,.07);
+      overflow-x: auto;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    thead tr { background: #EFF6FF; }
+    th {
+      text-align: left;
+      padding: .65rem 1rem;
+      font-weight: 600;
+      color: #1E40AF;
+      white-space: nowrap;
+    }
+    td { padding: .6rem 1rem; border-top: 1px solid #E5E7EB; }
+    tr:hover td { background: #F9FAFB; }
+
+    .badge {
+      display: inline-block;
+      padding: .2em .7em;
+      border-radius: 999px;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+    .badge-red    { background: #FEE2E2; color: #DC2626; }
+    .badge-orange { background: #FEF3C7; color: #D97706; }
+    .badge-green  { background: #DCFCE7; color: #16A34A; }
+    .badge-blue   { background: #DBEAFE; color: #2563EB; }
+    .badge-gray   { background: #F3F4F6; color: #6B7280; }
+
+    /* ---- Progress bar ---- */
+    .bar-wrap { background: #E5E7EB; border-radius: 999px; height: 8px; min-width: 60px; }
+    .bar-fill  { height: 8px; border-radius: 999px; background: #2563EB; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #9CA3AF;
+      font-size: .82rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Rapport de Turnover RH — {{ year }}</h1>
+  <div class="subtitle">Analyse annuelle des départs et de la rétention des collaborateurs</div>
+  <div class="meta">Généré le {{ generated_at }}</div>
+</header>
+
+<main>
+
+  <!-- ===================== KPI ===================== -->
+  <section>
+    <h2>Indicateurs clés</h2>
+    <div class="kpi-grid">
+
+      {% set rate = global_rate.rate %}
+      {% if rate < 5 %}
+        {% set kpi_class = "ok" %}
+      {% elif rate < 10 %}
+        {% set kpi_class = "warning" %}
+      {% else %}
+        {% set kpi_class = "danger" %}
+      {% endif %}
+
+      <div class="kpi-card {{ kpi_class }}">
+        <div class="value">{{ "%.1f"|format(rate) }}%</div>
+        <div class="label">Turnover annuel</div>
+      </div>
+
+      <div class="kpi-card blue">
+        <div class="value">{{ headcount.total }}</div>
+        <div class="label">Effectif actif</div>
+      </div>
+
+      <div class="kpi-card blue">
+        <div class="value">{{ global_rate.exits }}</div>
+        <div class="label">Départs sur l'année</div>
+      </div>
+
+      <div class="kpi-card blue">
+        <div class="value">{{ new_hires }}</div>
+        <div class="label">Nouvelles embauches</div>
+      </div>
+
+      <div class="kpi-card blue">
+        <div class="value">{{ avg_tenure }}</div>
+        <div class="label">Ancienneté moy. (ans)</div>
+      </div>
+
+      <div class="kpi-card blue">
+        <div class="value">{{ headcount.by_department | length }}</div>
+        <div class="label">Départements actifs</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== Tendance mensuelle ===================== -->
+  <section>
+    <h2>Évolution mensuelle du turnover</h2>
+    <div class="chart-box">
+      {% if charts.trend %}
+        <img src="data:image/png;base64,{{ charts.trend }}" alt="Turnover mensuel" />
+      {% else %}
+        <p style="color:#9CA3AF">Aucune donnée disponible pour cet indicateur.</p>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- ===================== Départements + Motifs ===================== -->
+  <section>
+    <h2>Analyse par département et motifs de départs</h2>
+    <div class="charts-2col">
+      <div class="chart-box">
+        {% if charts.dept %}
+          <img src="data:image/png;base64,{{ charts.dept }}" alt="Turnover par département" />
+        {% else %}
+          <p style="color:#9CA3AF">Aucune donnée.</p>
+        {% endif %}
+      </div>
+      <div class="chart-box">
+        {% if charts.reasons %}
+          <img src="data:image/png;base64,{{ charts.reasons }}" alt="Motifs de départs" />
+        {% else %}
+          <p style="color:#9CA3AF">Aucun départ enregistré sur la période.</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Effectifs ===================== -->
+  <section>
+    <h2>Répartition de l'effectif actif</h2>
+    <div class="charts-2col">
+      <div class="chart-box">
+        {% if charts.headcount %}
+          <img src="data:image/png;base64,{{ charts.headcount }}" alt="Effectif par département" />
+        {% else %}
+          <p style="color:#9CA3AF">Aucune donnée.</p>
+        {% endif %}
+      </div>
+
+      <!-- Tableau récapitulatif -->
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th>Département</th>
+              <th style="text-align:right">Actifs</th>
+              <th>Répartition</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for dept in headcount.by_department %}
+            {% set pct = (dept.count / headcount.total * 100) if headcount.total else 0 %}
+            <tr>
+              <td>{{ dept.department }}</td>
+              <td style="text-align:right;font-weight:600">{{ dept.count }}</td>
+              <td>
+                <div class="bar-wrap">
+                  <div class="bar-fill" style="width:{{ pct | round(1) }}%"></div>
+                </div>
+                <span style="font-size:.8rem;color:#6B7280">{{ "%.0f"|format(pct) }}%</span>
+              </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="3" style="color:#9CA3AF">Aucune donnée.</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Tableau départements à risque ===================== -->
+  <section>
+    <h2>Détail turnover par département</h2>
+    <div class="table-box">
+      <table>
+        <thead>
+          <tr>
+            <th>Département</th>
+            <th style="text-align:right">Taux</th>
+            <th style="text-align:right">Départs</th>
+            <th style="text-align:right">Effectif début</th>
+            <th>Niveau de risque</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for d in by_department %}
+          {% if d.headcount > 0 %}
+          <tr>
+            <td><strong>{{ d.department }}</strong></td>
+            <td style="text-align:right;font-weight:700">{{ "%.1f"|format(d.rate) }}%</td>
+            <td style="text-align:right">{{ d.exits }}</td>
+            <td style="text-align:right">{{ d.headcount }}</td>
+            <td>
+              {% if d.rate >= 15 %}
+                <span class="badge badge-red">Critique</span>
+              {% elif d.rate >= 10 %}
+                <span class="badge badge-orange">Élevé</span>
+              {% elif d.rate >= 5 %}
+                <span class="badge badge-blue">Modéré</span>
+              {% else %}
+                <span class="badge badge-green">Faible</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endif %}
+          {% else %}
+          <tr><td colspan="5" style="color:#9CA3AF">Aucune donnée.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== Trimestres ===================== -->
+  <section>
+    <h2>Bilan par trimestre</h2>
+    <div class="table-box">
+      <table>
+        <thead>
+          <tr>
+            <th>Trimestre</th>
+            <th style="text-align:right">Taux</th>
+            <th style="text-align:right">Départs</th>
+            <th style="text-align:right">Effectif début</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for q in quarterly_trend %}
+          <tr>
+            <td><strong>{{ q.label }}</strong></td>
+            <td style="text-align:right;font-weight:700">{{ "%.1f"|format(q.rate) }}%</td>
+            <td style="text-align:right">{{ q.exits }}</td>
+            <td style="text-align:right">{{ q.headcount }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== Motifs ===================== -->
+  {% if exit_reasons %}
+  <section>
+    <h2>Détail des motifs de départs</h2>
+    <div class="table-box">
+      <table>
+        <thead>
+          <tr>
+            <th>Motif</th>
+            <th style="text-align:right">Nombre</th>
+            <th style="text-align:right">Part</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in exit_reasons %}
+          {% set pct = (r.count / global_rate.exits * 100) if global_rate.exits else 0 %}
+          <tr>
+            <td>{{ reason_labels.get(r.reason, r.reason) }}</td>
+            <td style="text-align:right;font-weight:600">{{ r.count }}</td>
+            <td style="text-align:right">{{ "%.1f"|format(pct) }}%</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  {% endif %}
+
+</main>
+
+<footer>
+  HR Turnover Analyzer &mdash; Rapport généré automatiquement le {{ generated_at }}
+</footer>
+
+</body>
+</html>

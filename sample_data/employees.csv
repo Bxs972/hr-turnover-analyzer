@@ -1,0 +1,101 @@
+employee_id,first_name,last_name,email,department,position,hire_date,status
+EMP001,Amelia,Durand,amelia.durand@company.fr,Ressources Humaines,Chargé(e) RH,2021-01-31,active
+EMP002,Alexandre,Garcia,alexandre.garcia@company.fr,Ressources Humaines,Responsable RH,2019-02-24,active
+EMP003,Ethan,Fontaine,ethan.fontaine@company.fr,Ressources Humaines,Chargé(e) RH,2024-08-15,active
+EMP004,Théo,Dubois,theo.dubois@company.fr,Ressources Humaines,Chargé(e) RH,2019-01-19,active
+EMP005,Antoine,Garcia,antoine.garcia@company.fr,Ressources Humaines,Chargé(e) RH,2024-04-17,active
+EMP006,Léa,Dumont,lea.dumont@company.fr,Ressources Humaines,Recruteur(se),2020-06-21,active
+EMP007,Marion,Henry,marion.henry@company.fr,Ressources Humaines,Gestionnaire de paie,2018-01-27,active
+EMP008,Mia,Simon,mia.simon@company.fr,Informatique,Data Analyst,2022-09-28,active
+EMP009,Romain,Roux,romain.roux@company.fr,Informatique,Développeur(se) Java,2020-05-31,active
+EMP010,Mia,Girard,mia.girard@company.fr,Informatique,Développeur(se) Python,2019-01-15,active
+EMP011,Lucie,Petit,lucie.petit@company.fr,Informatique,Chef de projet IT,2021-11-09,active
+EMP012,Pauline,Bertrand,pauline.bertrand@company.fr,Informatique,Développeur(se) Python,2023-02-25,active
+EMP013,Charlotte,Durand,charlotte.durand@company.fr,Informatique,Analyste système,2018-11-19,active
+EMP014,Yann,Vincent,yann.vincent@company.fr,Informatique,Data Analyst,2024-12-08,active
+EMP015,Paul,Muller,paul.muller@company.fr,Informatique,Développeur(se) Java,2018-10-12,active
+EMP016,Marie,Mathieu,marie.mathieu@company.fr,Informatique,Développeur(se) Java,2021-03-31,active
+EMP017,Nicolas,Garcia,nicolas.garcia@company.fr,Informatique,Développeur(se) Python,2022-04-06,active
+EMP018,François,Martinez,françois.martinez@company.fr,Informatique,Data Analyst,2022-02-03,active
+EMP019,Camille,Lefèvre,camille.lefèvre@company.fr,Informatique,Chef de projet IT,2020-05-08,active
+EMP020,Jade,Roux,jade.roux@company.fr,Informatique,Data Analyst,2018-10-20,active
+EMP021,Pauline,Perrin,pauline.perrin@company.fr,Informatique,Développeur(se) Java,2023-12-28,active
+EMP022,Eva,David,eva.david@company.fr,Informatique,Développeur(se) Java,2023-03-09,active
+EMP023,Lucie,Roux,lucie.roux@company.fr,Informatique,Data Analyst,2024-03-31,active
+EMP024,Chloé,Clement,chloe.clement@company.fr,Informatique,Chef de projet IT,2018-08-18,active
+EMP025,Chloé,Dubois,chloe.dubois@company.fr,Informatique,Chef de projet IT,2022-07-02,active
+EMP026,François,Robert,françois.robert@company.fr,Ventes,Responsable commercial,2024-05-12,active
+EMP027,Nathan,Morel,nathan.morel@company.fr,Ventes,Responsable commercial,2023-08-07,active
+EMP028,Maxime,Morin,maxime.morin@company.fr,Ventes,Directeur(rice) des ventes,2019-08-09,active
+EMP029,Sarah,Leroy,sarah.leroy@company.fr,Ventes,Responsable commercial,2024-04-18,active
+EMP030,Charlotte,Bertrand,charlotte.bertrand@company.fr,Ventes,Directeur(rice) des ventes,2024-07-18,active
+EMP031,Maxime,Lefèvre,maxime.lefèvre@company.fr,Ventes,Responsable commercial,2019-07-21,active
+EMP032,Anaïs,Garnier,anaïs.garnier@company.fr,Ventes,Commercial(e),2018-07-12,active
+EMP033,David,Moreau,david.moreau@company.fr,Ventes,Responsable commercial,2022-09-26,active
+EMP034,Pauline,Robert,pauline.robert@company.fr,Ventes,Directeur(rice) des ventes,2022-04-13,active
+EMP035,Pauline,Martinez,pauline.martinez@company.fr,Ventes,Account Manager,2024-03-16,active
+EMP036,Sophie,Clement,sophie.clement@company.fr,Ventes,Commercial(e),2024-01-09,active
+EMP037,Mia,Roux,mia.roux@company.fr,Ventes,Account Manager,2019-04-02,active
+EMP038,Alice,Bonnet,alice.bonnet@company.fr,Ventes,Responsable commercial,2023-02-02,active
+EMP039,Sophie,Lopez,sophie.lopez@company.fr,Ventes,Account Manager,2023-08-13,active
+EMP040,Mia,Laurent,mia.laurent@company.fr,Ventes,Commercial(e),2021-05-07,active
+EMP041,Amelia,Faure,amelia.faure@company.fr,Marketing,Chargé(e) de communication,2019-09-19,active
+EMP042,Paul,Chevalier,paul.chevalier@company.fr,Marketing,Chargé(e) de communication,2024-01-19,active
+EMP043,Liam,Rousseau,liam.rousseau@company.fr,Marketing,Chef de produit,2024-09-19,active
+EMP044,Manon,Garnier,manon.garnier@company.fr,Marketing,Chef de produit,2019-04-04,active
+EMP045,Paul,Fournier,paul.fournier@company.fr,Marketing,Chargé(e) de communication,2018-08-26,active
+EMP046,Alexandre,Muller,alexandre.muller@company.fr,Marketing,Chef de produit,2018-12-17,active
+EMP047,Eva,Garnier,eva.garnier@company.fr,Marketing,Chef de produit,2023-12-22,active
+EMP048,Liam,Leroy,liam.leroy@company.fr,Marketing,Chargé(e) de communication,2023-05-01,active
+EMP049,Yann,Simon,yann.simon@company.fr,Finance,Responsable financier,2023-12-02,active
+EMP050,Pauline,Bonnet,pauline.bonnet@company.fr,Finance,Contrôleur(se) de gestion,2024-01-18,active
+EMP051,Mia,Lopez,mia.lopez@company.fr,Finance,Contrôleur(se) de gestion,2021-06-30,active
+EMP052,Maxime,Mathieu,maxime.mathieu@company.fr,Finance,Responsable financier,2022-11-30,active
+EMP053,Simon,François,simon.françois@company.fr,Finance,Comptable,2020-10-12,active
+EMP054,Chloé,Robert,chloe.robert@company.fr,Finance,Responsable financier,2018-03-28,active
+EMP055,Florian,Guerin,florian.guerin@company.fr,Finance,Contrôleur(se) de gestion,2024-08-07,active
+EMP056,Chloé,Martin,chloe.martin@company.fr,Finance,Comptable,2018-08-30,active
+EMP057,Marie,Girard,marie.girard@company.fr,Opérations,Responsable opérations,2023-10-07,active
+EMP058,Alexandre,Roux,alexandre.roux@company.fr,Opérations,Analyste processus,2020-05-27,active
+EMP059,Charlotte,Leroy,charlotte.leroy@company.fr,Opérations,Analyste processus,2020-09-22,active
+EMP060,Elise,Lambert,elise.lambert@company.fr,Opérations,Chef de projet,2019-01-22,active
+EMP061,Laura,Mathieu,laura.mathieu@company.fr,Opérations,Analyste processus,2021-12-22,active
+EMP062,Théo,Lambert,theo.lambert@company.fr,Opérations,Analyste processus,2018-08-10,active
+EMP063,Ethan,Morin,ethan.morin@company.fr,Opérations,Responsable opérations,2018-09-06,active
+EMP064,Maxime,Lopez,maxime.lopez@company.fr,Opérations,Coordinateur(rice),2019-03-24,active
+EMP065,Alexandre,Lefebvre,alexandre.lefebvre@company.fr,Opérations,Chef de projet,2024-01-06,active
+EMP066,Marion,Leroy,marion.leroy@company.fr,Opérations,Analyste processus,2020-01-22,active
+EMP067,Alexandre,Robert,alexandre.robert@company.fr,Service Client,Responsable SAV,2024-03-04,active
+EMP068,Laura,Thomas,laura.thomas@company.fr,Service Client,Technicien(ne) support,2024-01-24,active
+EMP069,Sophie,Richard,sophie.richard@company.fr,Service Client,Conseiller(ère) clientèle,2019-11-13,active
+EMP070,Clara,Garnier,clara.garnier@company.fr,Service Client,Responsable SAV,2020-05-25,active
+EMP071,Maxime,Thomas,maxime.thomas@company.fr,Service Client,Conseiller(ère) clientèle,2022-04-02,active
+EMP072,Sophie,Mercier,sophie.mercier@company.fr,Service Client,Responsable SAV,2023-02-07,active
+EMP073,Zoé,Lopez,zoe.lopez@company.fr,Service Client,Technicien(ne) support,2023-06-17,active
+EMP074,Julien,Lefebvre,julien.lefebvre@company.fr,Service Client,Responsable SAV,2020-06-10,active
+EMP075,Thomas,Henry,thomas.henry@company.fr,Service Client,Technicien(ne) support,2024-01-30,active
+EMP076,Thomas,Fontaine,thomas.fontaine@company.fr,Service Client,Responsable SAV,2018-08-23,active
+EMP077,Elise,Faure,elise.faure@company.fr,Service Client,Technicien(ne) support,2019-10-07,active
+EMP078,Thomas,Faure,thomas.faure@company.fr,Service Client,Conseiller(ère) clientèle,2020-02-01,active
+EMP079,Julie,Roussel,julie.roussel@company.fr,Direction,Directeur(rice) général(e),2020-08-21,active
+EMP080,Maxime,Durand,maxime.durand@company.fr,Direction,Assistant(e) de direction,2020-10-05,active
+EMP081,Florian,Roussel,florian.roussel@company.fr,Direction,Directeur(rice) général(e),2024-12-11,active
+EMP082,Nicolas,Lambert,nicolas.lambert@company.fr,Direction,Assistant(e) de direction,2024-07-18,active
+EMP083,Océane,Rousseau,oceane.rousseau@company.fr,Juridique,Responsable juridique,2020-12-04,active
+EMP084,Antoine,Mathieu,antoine.mathieu@company.fr,Juridique,Compliance Officer,2021-07-10,active
+EMP085,Alexandre,Bertrand,alexandre.bertrand@company.fr,Juridique,Responsable juridique,2019-06-21,active
+EMP086,Jade,Morin,jade.morin@company.fr,Juridique,Responsable juridique,2023-02-16,active
+EMP087,Manon,Chevalier,manon.chevalier@company.fr,Juridique,Juriste,2018-02-08,active
+EMP088,Hugo,Nicolas,hugo.nicolas@company.fr,Logistique,Coordinateur(rice) supply chain,2019-02-14,active
+EMP089,Julie,Blanc,julie.blanc@company.fr,Logistique,Responsable logistique,2023-09-04,active
+EMP090,Inès,Robert,ines.robert@company.fr,Logistique,Responsable logistique,2022-02-22,active
+EMP091,Alice,Simon,alice.simon@company.fr,Logistique,Gestionnaire stocks,2024-02-04,active
+EMP092,Nathan,Fournier,nathan.fournier@company.fr,Logistique,Coordinateur(rice) supply chain,2023-12-07,active
+EMP093,Sophie,Mathieu,sophie.mathieu@company.fr,Logistique,Coordinateur(rice) supply chain,2021-05-11,active
+EMP094,Jade,Petit,jade.petit@company.fr,Logistique,Responsable logistique,2020-12-19,active
+EMP095,David,Petit,david.petit@company.fr,Logistique,Coordinateur(rice) supply chain,2024-03-16,active
+EMP096,Julien,Roux,julien.roux@company.fr,Logistique,Gestionnaire stocks,2024-10-13,active
+EMP097,Antoine,Dumont,antoine.dumont@company.fr,Logistique,Gestionnaire stocks,2020-04-13,active
+EMP098,Ethan,Perrin,ethan.perrin@company.fr,Logistique,Gestionnaire stocks,2023-09-02,active
+EMP099,Clément,Bertrand,clement.bertrand@company.fr,Logistique,Responsable logistique,2019-01-14,active
+EMP100,Amelia,Bonnet,amelia.bonnet@company.fr,Logistique,Gestionnaire stocks,2018-06-30,active
